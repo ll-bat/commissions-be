@@ -1,19 +1,9 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
 const app = express();
+import appSetup from './startup/init';
+import routerSetup from './startup/router';
+import securitySetup from './startup/security';
 
-// database connections
-
-// routes
-app.get('/', (req: Request, res: Response) => {
-    res.send('Hello World!');
-});
-
-// some more stuff
-
-const APP_PORT = 8000;
-
-app.listen(APP_PORT, () => {
-    console.log(`Server started on port ${APP_PORT}`);
-});
-
-// end
+appSetup(app);
+securitySetup(app, express);
+routerSetup(app);
