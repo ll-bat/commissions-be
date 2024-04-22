@@ -1,5 +1,5 @@
 import IProduct from "./product.model";
-import IStaffMember from "./staff_member.model";
+import IStaffMember from "./staffMember.model";
 
 export default interface IOrder {
     id: number;

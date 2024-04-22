@@ -1,6 +1,6 @@
 import {Router, Request, Response} from 'express';
 import {useTypeORM} from '../postgresql/typeorm';
-import {StaffMemberEntity} from "../postgresql/entity/staff_member.entity";
+import {StaffMemberEntity} from "../postgresql/entity/staffMember.entity";
 
 const controller = Router();
 

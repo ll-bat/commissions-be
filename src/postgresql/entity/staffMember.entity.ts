@@ -1,5 +1,5 @@
 import {Entity, PrimaryGeneratedColumn, Column} from 'typeorm';
-import IStaffMember from '../model/staff_member.model';
+import IStaffMember from '../model/staffMember.model';
 
 @Entity()
 export class StaffMemberEntity implements IStaffMember {

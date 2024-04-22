@@ -1,7 +1,7 @@
 import {Entity, PrimaryGeneratedColumn, Column, ManyToOne, ManyToMany, JoinTable} from 'typeorm';
 import IOrder from '../model/order.model';
 import {ProductEntity} from "./product.entity";
-import {StaffMemberEntity} from "./staff_member.entity";
+import {StaffMemberEntity} from "./staffMember.entity";
 
 @Entity()
 export class OrderEntity implements IOrder {
