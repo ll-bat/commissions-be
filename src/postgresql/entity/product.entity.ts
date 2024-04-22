@@ -15,7 +15,7 @@ export class ProductEntity implements IProduct {
     price!: number;
 
     @Column('decimal', {nullable: true})
-    commission_percent!: number | null;
+    commissionPercent!: number | null;
 
     @ManyToOne(() => CategoryEntity)
     category: CategoryEntity

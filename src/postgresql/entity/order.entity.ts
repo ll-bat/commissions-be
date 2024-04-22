@@ -13,7 +13,7 @@ export class OrderEntity implements IOrder {
     products: ProductEntity[]
 
     @ManyToOne(() => StaffMemberEntity)
-    staff_member: StaffMemberEntity
+    staffMember: StaffMemberEntity
 
     @Column('date')
     date: Date

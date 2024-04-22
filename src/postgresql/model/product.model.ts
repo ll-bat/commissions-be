@@ -5,5 +5,5 @@ export default interface IProduct {
     name: string;
     category: ICategory,
     price: number;
-    commission_percent: number | null;
+    commissionPercent: number | null;
 }

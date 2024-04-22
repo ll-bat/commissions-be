@@ -7,5 +7,5 @@ export class StaffMemberEntity implements IStaffMember {
     id!: number;
 
     @Column('varchar')
-    full_name!: string;
+    fullName!: string;
 }

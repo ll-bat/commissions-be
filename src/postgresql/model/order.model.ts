@@ -4,6 +4,6 @@ import IStaffMember from "./staff_member.model";
 export default interface IOrder {
     id: number;
     products: IProduct[];
-    staff_member: IStaffMember;
+    staffMember: IStaffMember;
     date: Date;
 }
