@@ -1,7 +1,6 @@
 import {Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinTable} from 'typeorm';
 import IProduct from '../model/product.model';
 import {CategoryEntity} from "./category.entity";
-import {OrderEntity} from "./order.entity";
 
 @Entity()
 export class ProductEntity implements IProduct {
