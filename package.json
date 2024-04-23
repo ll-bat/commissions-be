@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "typeorm": "ts-node ./node_modules/typeorm/cli",
+    "migration:run": "npm run typeorm migration:run -- -d src/db/postgresql/dataSource.ts",
+    "migration:create": "npm run typeorm -- migration:create src/db/postgresql/migrations/"
   },
   "keywords": [],
   "author": "",
