@@ -1,9 +1,8 @@
+import {faker} from "@faker-js/faker";
 import {MigrationInterface, QueryRunner} from "typeorm";
 import {useTypeORM} from "../typeorm";
 import {ProductEntity} from "../entity/product.entity";
-import {faker} from "@faker-js/faker";
 import {CategoryEntity} from "../entity/category.entity";
-import {getRandomNumber} from "../../../utils";
 
 async function getSampleProducts(count: number) {
     const categoriesEntity = await useTypeORM(CategoryEntity)
@@ -14,8 +13,8 @@ async function getSampleProducts(count: number) {
         products.push({
             name: faker.commerce.productName(),
             price: faker.commerce.price({min: 1, max: 100}),
-            commissionPercent: getRandomNumber(0, 50),
-            category: categories[getRandomNumber(0, categories.length - 1)]
+            commissionPercent: faker.number.int({min: 0, max: 50}),
+            category: categories[faker.number.int({min: 0, max: categories.length - 1})]
         })
     }
     return products;
