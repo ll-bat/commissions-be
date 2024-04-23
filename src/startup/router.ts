@@ -1,7 +1,7 @@
 import {Express, Request, Response} from 'express';
-import productsRouter from '../controllers/product.controller';
-import ordersRouter from '../controllers/order.controller';
-import staffMembersRouter from '../controllers/staffMember.controller';
+import productsRouter from '../controllers/products.controller';
+import ordersRouter from '../controllers/orders.controller';
+import staffMembersRouter from '../controllers/staffMembers.controller';
 
 const routerSetup = (app: Express) =>
     app.get('/', async (req: Request, res: Response) => {
