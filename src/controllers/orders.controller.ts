@@ -9,7 +9,7 @@ controller
     .get('/', async (req: Request, res: Response) => {
         const {startDate: startDateString, endDate: endDateString, staffMemberId} = req.query;
 
-        // TODO - do validation of the query parameters
+        // do validation of the query parameters
         const fromDate = new Date(startDateString as string);
         const endDate = new Date(endDateString as string);
 
