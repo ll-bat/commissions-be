@@ -10,17 +10,21 @@ controller
         const {startDate: startDateString, endDate: endDateString, staffMemberId} = req.query;
 
         // TODO - do validation of the query parameters
-
         const fromDate = new Date(startDateString as string);
         const endDate = new Date(endDateString as string);
 
-        const orders = await useTypeORM(OrderEntity).find({
-            relations: ['products', 'staffMember'],
-            where: {
-                staffMemberId,
-                date: Between(fromDate, endDate)
-            }
-        });
+        let orders;
+        try {
+            orders = await useTypeORM(OrderEntity).find({
+                relations: ['products', 'staffMember'],
+                where: {
+                    staffMemberId,
+                    date: Between(fromDate, endDate)
+                }
+            });
+        } catch (e) {
+            return res.status(500).send("Error fetching orders");
+        }
 
         res.send(orders);
     })
