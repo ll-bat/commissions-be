@@ -1,0 +1,28 @@
+services:
+  api:
+    container_name: commissions-api
+    build:
+      context: .
+    env_file:
+      - ./.env
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/home/app
+    entrypoint: sh -c "sh /home/app/entrypoint.sh"
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: commissions
+    ports:
+      - '5432:5432'
+    volumes:
+      - commissions-db:/var/lib/postgresql/data
+
+volumes:
+  commissions-db:
