@@ -1,23 +1,23 @@
-import {Entity, PrimaryGeneratedColumn, Column, ManyToOne, ManyToMany, JoinTable} from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, ManyToMany, JoinTable } from 'typeorm';
 import IOrder from '../model/order.model';
-import {ProductEntity} from "./product.entity";
-import {StaffMemberEntity} from "./staffMember.entity";
+import { ProductEntity } from './product.entity';
+import { StaffMemberEntity } from './staffMember.entity';
 
 @Entity()
 export class OrderEntity implements IOrder {
-    @PrimaryGeneratedColumn()
-    id!: number;
+  @PrimaryGeneratedColumn()
+  id!: number;
 
-    @ManyToMany(() => ProductEntity)
-    @JoinTable()
-    products: ProductEntity[]
+  @ManyToMany(() => ProductEntity)
+  @JoinTable()
+  products: ProductEntity[];
 
-    @ManyToOne(() => StaffMemberEntity)
-    staffMember: StaffMemberEntity
+  @ManyToOne(() => StaffMemberEntity)
+  staffMember: StaffMemberEntity;
 
-    @Column({type: 'int'})
-    staffMemberId: number
+  @Column({ type: 'int' })
+  staffMemberId: number;
 
-    @Column('date')
-    date: Date
+  @Column('date')
+  date: Date;
 }

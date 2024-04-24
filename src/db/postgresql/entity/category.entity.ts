@@ -3,9 +3,9 @@ import ICategory from '../model/cateogry.model';
 
 @Entity()
 export class CategoryEntity implements ICategory {
-    @PrimaryGeneratedColumn()
-    id!: number;
+  @PrimaryGeneratedColumn()
+  id!: number;
 
-    @Column('varchar')
-    name!: string;
+  @Column('varchar')
+  name!: string;
 }
