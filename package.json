@@ -10,7 +10,7 @@
     "migration:run": "npm run typeorm migration:run -- -d src/db/postgresql/dataSource.ts",
     "migration:create": "npm run typeorm -- migration:create src/db/postgresql/migrations/",
     "schema:sync": "npm run typeorm schema:sync -- -d src/db/postgresql/dataSource.ts",
-    "lint": "eslint src/**/*.ts --fix"
+    "lint": "npx eslint src/**/*.ts --fix"
   },
   "keywords": [],
   "author": "",
