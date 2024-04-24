@@ -15,6 +15,9 @@ export class OrderEntity implements IOrder {
     @ManyToOne(() => StaffMemberEntity)
     staffMember: StaffMemberEntity
 
+    @Column({type: 'int'})
+    staffMemberId: number
+
     @Column('date')
     date: Date
 }
