@@ -6,7 +6,9 @@ const controller = Router();
 
 controller
     .get('/', async (req: Request, res: Response) => {
-        const orders = await useTypeORM(OrderEntity).find();
+        const orders = await useTypeORM(OrderEntity).find({
+            relations: ['products', 'staffMember']
+        });
         res.send(orders);
     })
 

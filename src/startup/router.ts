@@ -10,7 +10,7 @@ const routerSetup = (app: Express) =>
     })
         .use('/api/orders', ordersRouter)
         .use('/api/products', productsRouter)
-        .use('/api/staffMembers', staffMembersRouter)
+        .use('/api/staff-members', staffMembersRouter)
         .use('/api/categories', categoriesRouter);
 
 export default routerSetup;
