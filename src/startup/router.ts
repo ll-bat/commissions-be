@@ -6,7 +6,7 @@ import categoriesRouter from '../controllers/categories.controller';
 
 const routerSetup = (app: Express) =>
   app
-    .get('/', async (req: Request, res: Response) => {
+    .get('/', (req: Request, res: Response) => {
       return res.send('Hei there!');
     })
     .use('/api/orders', ordersRouter)
