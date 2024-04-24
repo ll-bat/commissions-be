@@ -7,8 +7,6 @@ services:
       - ./.env
     ports:
       - "8000:8000"
-    volumes:
-      - .:/home/app
     entrypoint: sh -c "sh /home/app/entrypoint.sh"
     depends_on:
       - postgres
